@@ -1,0 +1,13 @@
+[Unit]
+Description=The Stack Process Manager
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/stack -c /usr/local/bin/config.txt
+LimitNOFILE=65535
+LimitNPROC=65535
+LimitCORE=infinity
+
+[Install]
+WantedBy=multi-user.target
